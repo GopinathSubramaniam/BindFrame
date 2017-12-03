@@ -6,6 +6,7 @@ var LoginController = (function(params) {
 
     function login() {
         console.log('Login :::: ');
+        $bind.go('/home');
     }
 
     function validation() {

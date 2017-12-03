@@ -1,10 +1,16 @@
 'use strict';
 
-$bind.routes = [
-    { url: '/', controller: 'LoginController', view: 'content', templateName: 'login' },
-    { url: '/signup', controller: 'SignupController', view: 'content', templateName: 'signup' },
-    { url: '/home', controller: 'HomeController', view: 'content', templateName: 'home' },
-    { url: '/product', controller: 'ProductController', view: 'content', templateName: 'product' },
-    { url: '/user', controller: 'UserController', view: 'content', templateName: 'user' }
+$bind.routes = [{
+        state: 'main',
+        url: '/',
+        controller: 'LoginController',
+        view: '#content',
+        templateName: 'login'
+    },
+    { state: 'signup', url: '/signup', controller: 'SignupController', view: '#content', templateName: 'signup' },
+    { state: 'landingpage', url: '/landingpage', view: '#content', templateName: 'landingpage' },
+    { state: 'landingpage.home', url: '/home', controller: 'HomeController', view: '#landingpageContent', templateName: 'home' },
+    { state: 'landingpage.product', url: '/product', controller: 'ProductController', view: '#landingpageContent', templateName: 'product' },
+    { state: 'landingpage.user', url: '/user', controller: 'UserController', view: '#landingpageContent', templateName: 'user' }
 ];
 $bind.routecheck();
